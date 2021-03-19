@@ -10,5 +10,6 @@
 <br/>
 <a href="hello-servlet">Hello Servlet</a>
 <a href="auteur">Ajouter un auteur</a>
+<a href="book">Ajouter un livre</a>
 </body>
 </html>

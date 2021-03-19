@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public class Livre extends Document {
 
+    private Auteur author;
+
     private int numPages;
 
     private String type;
@@ -11,6 +13,14 @@ public class Livre extends Document {
     private String isbn;
 
     private LocalDate creation;
+
+    public Auteur getAuthor() {
+        return author;
+    }
+
+    public void setAuthor(Auteur author) {
+        this.author = author;
+    }
 
     public int getNumPages() {
         return numPages;

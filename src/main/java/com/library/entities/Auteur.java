@@ -4,6 +4,8 @@ import java.time.LocalDate;
 
 public class Auteur {
 
+    private int id;
+
     private String nom;
 
     private String prenom;
@@ -27,6 +29,14 @@ public class Auteur {
 
     public Auteur() {
 
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getNom() {
