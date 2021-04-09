@@ -1,22 +1,30 @@
 package com.library.entities;
 
+import javax.persistence.*;
+import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
-public class Auteur {
+/**
+ * @author biggy
+ */
 
+@Entity
+public class Auteur implements Serializable {
+
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-
     private String nom;
-
     private String prenom;
-
     private String pseudo;
 
     private LocalDate naissance;
 
     private LocalDate deces;
-
+    @Enumerated
     private Nationality nationalite;
+    @ManyToMany(mappedBy = "auteurs")
+    private List<Revue> reviews;
 
     public Auteur(String nom, String prenom, String pseudo, LocalDate naissance, LocalDate deces, Nationality nationalite) {
         this.nom = nom;
@@ -27,9 +35,7 @@ public class Auteur {
         this.nationalite = nationalite;
     }
 
-    public Auteur() {
-
-    }
+    public Auteur() {}
 
     public int getId() {
         return id;

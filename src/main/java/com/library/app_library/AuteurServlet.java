@@ -1,5 +1,6 @@
 package com.library.app_library;
 
+import com.library.dao.DaoFactory;
 import com.library.entities.Auteur;
 import com.library.entities.Nationality;
 
@@ -21,6 +22,7 @@ public class AuteurServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getSession().setAttribute("authors", DaoFactory.getAuthorDao().findAll());
         response.sendRedirect(request.getContextPath() + "/Auteur.jsp");
     }
 
@@ -56,9 +58,10 @@ public class AuteurServlet extends HttpServlet {
             a.setNaissance(LocalDate.parse(naissance, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 
 
-        auteurs.add(a);
+        // auteurs.add(a);
 
-        request.getSession().setAttribute("authors", auteurs);
+        // request.getSession().setAttribute("authors", auteurs);
+        DaoFactory.getAuthorDao().create(a);
         response.sendRedirect(request.getContextPath() + "/AuthorList.jsp");
     }
 }

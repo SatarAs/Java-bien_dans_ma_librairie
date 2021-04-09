@@ -1,18 +1,23 @@
 package com.library.entities;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
+@Entity
 public class Revue extends Document {
 
     private String editeur;
 
-    private ArrayList<Auteur> auteurs;
+    @ManyToMany(cascade = CascadeType.MERGE)
+    @JoinTable(name = "REVIEWS_AUTHORS")
+    private List<Auteur> auteurs;
 
     private int numPages;
 
     private LocalDate periode;
-//    Je commente parce que tu l'a demandé
+    @Column(unique = true, nullable = false)
     private String isbn;
 
     public Revue() {
@@ -34,7 +39,7 @@ public class Revue extends Document {
         this.editeur = editeur;
     }
 
-    public ArrayList<Auteur> getAuteurs() {
+    public List<Auteur> getAuteurs() {
         return auteurs;
     }
 

@@ -1,15 +1,19 @@
 package com.library.entities;
 
+import javax.persistence.*;
 import java.time.LocalDate;
 
+@Entity
 public class Livre extends Document {
 
+    @OneToOne
+    @JoinColumn(name = "id_author")
     private Auteur author;
 
     private int numPages;
 
     private String type;
-
+    @Column(nullable = false, unique = true)
     private String isbn;
 
     private LocalDate creation;
