@@ -2,7 +2,7 @@ package com.library.entities;
 
 public class DocElec extends Document{
 
-    private Auteur auteur;
+    private Auteur author;
 
     private int numPages;
 
@@ -13,19 +13,19 @@ public class DocElec extends Document{
     public DocElec() {
     }
 
-    public DocElec(Auteur auteur, int numPages, String adresseInternet, String type) {
-        this.auteur = auteur;
+    public DocElec(Auteur author, int numPages, String adresseInternet, String type) {
+        this.author = author;
         this.numPages = numPages;
         this.adresseInternet = adresseInternet;
         this.type = type;
     }
 
     public Auteur getAuteur() {
-        return auteur;
+        return author;
     }
 
-    public void setAuteur(Auteur auteur) {
-        this.auteur = auteur;
+    public void setAuteur(Auteur author) {
+        this.author = author;
     }
 
     public int getNumPages() {
