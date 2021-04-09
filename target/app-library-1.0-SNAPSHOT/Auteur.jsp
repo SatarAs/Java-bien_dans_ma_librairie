@@ -17,7 +17,13 @@
         <input type="text" name="pseudo"/>
         <input type="date" name="naissance"/>
         <input type="date" name="deces"/>
-        <input type="text" name="nationalite"/>
+        <input type="radio" name="nat" value="FR" checked/>FR
+        <input type="radio" name="nat" value="DE" checked/>DE
+        <input type="radio" name="nat" value="EN" checked/>EN
+        <input type="radio" name="nat" value="ES" checked/>ES
+        <input type="radio" name="nat" value="US" checked/>US
+        <input type="radio" name="nat" value="BE" checked/>BE
+
 
         <input type="submit"/>
     </form>

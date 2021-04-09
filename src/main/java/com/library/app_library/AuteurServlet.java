@@ -1,6 +1,7 @@
 package com.library.app_library;
 
 import com.library.entities.Auteur;
+import com.library.entities.Nationality;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -28,7 +29,7 @@ public class AuteurServlet extends HttpServlet {
         String nom = request.getParameter("nom");
         String prenom = request.getParameter("prenom");
         String pseudo = request.getParameter("pseudo");
-        String nationalite = request.getParameter("nationalite");
+        String nat = request.getParameter("nat");
         String naissance = request.getParameter("naissance");
         // System.out.println(naissance);
 
@@ -38,7 +39,19 @@ public class AuteurServlet extends HttpServlet {
         a.setNom(nom);
         a.setPrenom(prenom);
         a.setPseudo(pseudo);
-        a.setNationalite(nationalite);
+        if (nat.compareTo("FR") == 0) {
+            a.setNationalite(Nationality.FR);
+        } else if (nat.compareTo("US") == 0) {
+            a.setNationalite(Nationality.US);
+        } else if (nat.compareTo("EN") == 0) {
+            a.setNationalite(Nationality.EN);
+        } else if (nat.compareTo("IT") == 0) {
+            a.setNationalite(Nationality.DE);
+        } else if (nat.compareTo("GE") == 0) {
+            a.setNationalite(Nationality.ES);
+        } else {
+            a.setNationalite(Nationality.BE);
+        }
         if (!naissance.equals(""))
             a.setNaissance(LocalDate.parse(naissance, DateTimeFormatter.ofPattern("yyyy-MM-dd")));
 

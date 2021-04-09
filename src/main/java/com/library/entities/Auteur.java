@@ -16,9 +16,9 @@ public class Auteur {
 
     private LocalDate deces;
 
-    private String nationalite;
+    private Nationality nationalite;
 
-    public Auteur(String nom, String prenom, String pseudo, LocalDate naissance, LocalDate deces, String nationalite) {
+    public Auteur(String nom, String prenom, String pseudo, LocalDate naissance, LocalDate deces, Nationality nationalite) {
         this.nom = nom;
         this.prenom = prenom;
         this.pseudo = pseudo;
@@ -79,11 +79,11 @@ public class Auteur {
         this.deces = deces;
     }
 
-    public String getNationalite() {
+    public Nationality getNationalite() {
         return nationalite;
     }
 
-    public void setNationalite(String nationalite) {
+    public void setNationalite(Nationality nationalite) {
         this.nationalite = nationalite;
     }
 }
